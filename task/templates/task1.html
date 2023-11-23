@@ -1,0 +1,56 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <style>
+        h1 {
+            color: rgb(112, 98, 51);
+            text-align: center;
+            font-family: monospace;
+        }
+
+        .p1 {
+            color: rgb(176, 146, 106);
+            text-align: justify;
+            font-family: monospace;
+            width: 800px;
+            height: 300px;
+            background-color: transparent;
+            padding: 20px;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .img {
+            width: 750px;
+            height: 500px;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+
+<body>
+    <section>
+        <h1>La Universidad Católica de Cuenca </h1>
+        <p class="p1">
+            Tenemos una diferencia que nos caracteriza: la calidad humana que se comparte en la Comunidad Católica hacia
+            el pueblo. Los cambios que hemos dado y lo que los estudiantes han aportado, responden a la colectividad por
+            la confianza depositada en nosotros.El complemento ideal de la superación y la calidad ha sido la formación
+            de docentes, autoridades y personal administrativo, siendo una sola familia.El poder es la acción que
+            transforma, que nos convertirá en la mejor universidad del austro, trascendiendo a límites internacionales.
+        </p>
+        <img class="img" src="{% static 'pictures/img.jpg' %}" alt="">
+    </section>
+</body>
+
+{% endblock %}

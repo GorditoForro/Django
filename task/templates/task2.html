@@ -1,0 +1,81 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <style>
+        h1 {
+            color: rgb(112, 98, 51);
+            text-align: center;
+            font-family: monospace;
+        }
+
+        .p1 {
+            color: rgb(176, 146, 106);
+            text-align: justify;
+            font-family: monospace;
+            width: 800px;
+            height: 300px;
+            background-color: transparent;
+            padding: 20px;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .div1 {
+            color: rgb(248, 240, 229);
+            text-align: justify;
+            font-family: monospace;
+            width: 250px;
+            height: 450px;
+            background-color: rgb(218, 192, 163);
+            padding: 20px;
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+            border: 2px solid rgb(15, 44, 89);
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>Factor Común</h1>
+        <p class="p1">
+            Cuando hablamos de factor común en álgebra, nos referimos a la identificación y extracción de un término que
+            es común a varios términos de una expresión algebraica. Este proceso se utiliza para simplificar y expresar
+            la expresión de una manera más compacta. Identificar el factor común implica encontrar el factor que es
+            divisible entre todos los términos de la expresión.
+        </p>
+    </section>
+    <section>
+        <div class="div1">
+            <h2>Calculadora</h2>
+            <P><b>Ingrese tres numeros</b></P>
+            <form method="post">
+                {% csrf_token %}
+                <label for="number1">Número 1:</label>
+                <input type="number" name="number1" id="number1"><br><br>
+                <label for="number2">Número 2:</label>
+                <input type="number" name="number2" id="number2"><br><br>
+                <label for="number3">Número 3:</label>
+                <input type="number" name="number3" id="number3"><br><br>
+                <button type="submit">Calcular Factor Común</button>
+                <br>
+            </form>
+
+            {% if factor_comun %}
+            <p>El factor común de los tres números es: {{ factor_comun }}</p>
+            {% endif %}
+        </div>
+    </section>
+</body>
+
+{% endblock %}
